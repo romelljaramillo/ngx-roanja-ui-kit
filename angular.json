@@ -126,6 +126,36 @@
               "zone.js/testing"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngx-rj-ui-kit/.storybook",
+            "browserTarget": "ngx-rj-ui-kit:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-rj-ui-kit"
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngx-rj-ui-kit/.storybook",
+            "browserTarget": "ngx-rj-ui-kit:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "projects/ngx-rj-ui-kit"
+            ],
+            "outputDir": "dist/storybook/ngx-rj-ui-kit"
+          }
         }
       }
     }
