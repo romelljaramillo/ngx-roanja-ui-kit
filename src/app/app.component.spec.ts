@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ngx-roanja-ui-kit' title`, () => {
+  it(`should have the 'roanja-ssr-ui-kit' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-roanja-ui-kit');
+    expect(app.title).toEqual('roanja-ssr-ui-kit');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ngx-roanja-ui-kit');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, roanja-ssr-ui-kit');
   });
 });

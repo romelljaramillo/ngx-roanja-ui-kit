@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-roanja-ui-kit": {
+    "roanja-ssr-ui-kit": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-roanja-ui-kit",
+            "outputPath": "dist/roanja-ssr-ui-kit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -62,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ngx-roanja-ui-kit:build:production"
+              "buildTarget": "roanja-ssr-ui-kit:build:production"
             },
             "development": {
-              "buildTarget": "ngx-roanja-ui-kit:build:development"
+              "buildTarget": "roanja-ssr-ui-kit:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ngx-roanja-ui-kit:build"
+            "buildTarget": "roanja-ssr-ui-kit:build"
           }
         },
         "test": {
@@ -89,9 +92,42 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "roanja-ssr-ui-kit:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": ".storybook",
+            "browserTarget": "roanja-ssr-ui-kit:build",
+            "compodoc": true,
+            "compodocArgs": [
+              "-e",
+              "json",
+              "-d",
+              "."
+            ],
+            "outputDir": "dist/storybook/roanja-ssr-ui-kit"
           }
         }
       }
@@ -100,7 +136,7 @@
       "projectType": "library",
       "root": "projects/ngx-rj-ui-kit",
       "sourceRoot": "projects/ngx-rj-ui-kit/src",
-      "prefix": "lib",
+      "prefix": "rjb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -132,6 +168,7 @@
           "options": {
             "configDir": "projects/ngx-rj-ui-kit/.storybook",
             "browserTarget": "ngx-rj-ui-kit:build",
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
             "compodoc": true,
             "compodocArgs": [
               "-e",
@@ -147,6 +184,7 @@
           "options": {
             "configDir": "projects/ngx-rj-ui-kit/.storybook",
             "browserTarget": "ngx-rj-ui-kit:build",
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
             "compodoc": true,
             "compodocArgs": [
               "-e",
@@ -161,6 +199,6 @@
     }
   },
   "cli": {
-    "analytics": "82ccfed8-6a9f-41fa-a981-3f66248ee6be"
+    "analytics": false
   }
 }

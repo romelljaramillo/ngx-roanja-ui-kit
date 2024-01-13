@@ -1,4 +1,4 @@
-# NgxRoanjaUiKit
+# RoanjaSsrUiKit
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.5.
 
@@ -25,3 +25,32 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Añadir Bootstrap 5 a StoryBook
+
+1. CSS 
+   1. Se añade en el archivo angular.json 
+
+```json
+
+    "storybook": {
+        "options": {
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
+        }
+    },
+    "build-storybook": {
+        "options": {
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
+        }
+    }
+    
+```
+
+1. JS
+   1. Se añade en el  .storybook/preview.ts
+
+```js 
+
+    import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+```

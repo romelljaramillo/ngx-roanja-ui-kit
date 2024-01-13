@@ -2,42 +2,9 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "Item",
-            "id": "interface-Item-9f215733f2c13c2b6164c5c52eea2ed883513d2daf911a1396035a4ee22f2755496e4043580ca333a282d66f8a5ea905478e8141b11a4555b1efa23bed3d1d9b",
-            "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css'\n})\nexport class AccordionComponent implements OnInit {\n    /**\n   * @description items to display in the accordion\n   * @default []\n   * @type {Item[]}\n   * @memberof RjAccordionComponent\n   * @example\n   * <rjb-accordion [items]=\"items\"></rjb-accordion>\n   */\n    @Input() items: Item[] = [];\n\n    /**\n     * @description id for the accordion\n     * @default rjaccordion\n     * @type {string}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" id=\"rjaccordion\"></rjb-accordion>\n     */\n    @Input() id: string = 'rjaccordion';\n  \n    /**\n     * @description active item index expanded by default undefined value (starts at 0 to n-items)\n     * @default undefined\n     * @type {number}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showItem]=\"0\"></rjb-accordion>\n     */\n    @Input() showItem: number | undefined = undefined;\n  \n    /**\n     * @description show all items expanded by default false value\n     * @default false\n     * @type {boolean}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showAll]=\"true\"></rjb-accordion>\n     */\n    @Input() showAll: boolean = false;\n  \n    ngOnInit(): void {\n      if (this.showAll) {\n        this.showItem = undefined;\n      }\n    }\n}\n",
-            "properties": [
-                {
-                    "name": "content",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "title",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string | undefined",
-                    "optional": true,
-                    "description": "",
-                    "line": 5
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
-            "file": "projects/ngx-rj-ui-kit/src/stories/user.ts",
+            "file": "src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -59,553 +26,54 @@
             "extends": []
         }
     ],
-    "injectables": [
-        {
-            "name": "NgxRjUiKitService",
-            "id": "injectable-NgxRjUiKitService-08b1730ace0b17086d5afe3166d4096077a5747b87be6c2232995db4242d3a0a844a402a22802851d26809584a7c8f0b0def723db5bfbad0a4c0ac878775fc85",
-            "file": "projects/ngx-rj-ui-kit/src/lib/ngx-rj-ui-kit.service.ts",
-            "properties": [],
-            "methods": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class NgxRjUiKitService {\n\n  constructor() { }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 6
-            },
-            "extends": [],
-            "type": "injectable"
-        }
-    ],
+    "injectables": [],
     "guards": [],
     "interceptors": [],
     "classes": [],
     "directives": [],
     "components": [
         {
-            "name": "AccordionComponent",
-            "id": "component-AccordionComponent-9f215733f2c13c2b6164c5c52eea2ed883513d2daf911a1396035a4ee22f2755496e4043580ca333a282d66f8a5ea905478e8141b11a4555b1efa23bed3d1d9b",
-            "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
+            "name": "AppComponent",
+            "id": "component-AppComponent-8e1e6f4b6cd0573e0830914fb3789a02bac6de74af9db6cc33295b41c1a4b6738c24493f36d5194c8caffdbee1f3767358780e2797a36b1df7ab63813e4b79fb",
+            "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "rjb-accordion",
+            "selector": "app-root",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./accordion.component.html"
+                "./app.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "id",
-                    "defaultValue": "'rjaccordion'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 667,
-                            "end": 708,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 668,
-                                "end": 679,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>id for the accordion</p>\n"
-                        },
-                        {
-                            "pos": 708,
-                            "end": 736,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 709,
-                                "end": 716,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>rjaccordion</p>\n"
-                        },
-                        {
-                            "pos": 736,
-                            "end": 758,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 737,
-                                "end": 741,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 742,
-                                "end": 750,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 743,
-                                    "end": 749,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 154
-                                }
-                            }
-                        },
-                        {
-                            "pos": 758,
-                            "end": 796,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 759,
-                                "end": 767,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 796,
-                            "end": 882,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 797,
-                                "end": 804,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; id=&quot;rjaccordion&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 35,
-                    "type": "string",
-                    "decorators": []
-                },
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
                 {
                     "name": "items",
-                    "defaultValue": "[]",
+                    "defaultValue": "[\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' }\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 425,
-                            "end": 477,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 426,
-                                "end": 437,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>items to display in the accordion</p>\n"
-                        },
-                        {
-                            "pos": 477,
-                            "end": 494,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 478,
-                                "end": 485,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>[]</p>\n"
-                        },
-                        {
-                            "pos": 494,
-                            "end": 514,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 495,
-                                "end": 499,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 500,
-                                "end": 508,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 501,
-                                    "end": 507,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 188,
-                                    "elementType": {
-                                        "pos": 501,
-                                        "end": 505,
-                                        "flags": 16777216,
-                                        "modifierFlagsCache": 0,
-                                        "transformFlags": 1,
-                                        "kind": 183,
-                                        "typeName": {
-                                            "pos": 501,
-                                            "end": 505,
-                                            "flags": 16777216,
-                                            "modifierFlagsCache": 0,
-                                            "transformFlags": 0,
-                                            "kind": 80,
-                                            "escapedText": "Item"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "pos": 514,
-                            "end": 550,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 515,
-                                "end": 523,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 550,
-                            "end": 615,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 551,
-                                "end": 558,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 25,
                     "type": "Item[]",
-                    "decorators": []
-                },
-                {
-                    "name": "showAll",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 1289,
-                            "end": 1356,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1290,
-                                "end": 1301,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>show all items expanded by default false value</p>\n"
-                        },
-                        {
-                            "pos": 1356,
-                            "end": 1378,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1357,
-                                "end": 1364,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>false</p>\n"
-                        },
-                        {
-                            "pos": 1378,
-                            "end": 1401,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 1379,
-                                "end": 1383,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 1384,
-                                "end": 1393,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 1385,
-                                    "end": 1392,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 136
-                                }
-                            }
-                        },
-                        {
-                            "pos": 1401,
-                            "end": 1439,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1402,
-                                "end": 1410,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 1439,
-                            "end": 1525,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1440,
-                                "end": 1447,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; [showAll]=&quot;true&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 55,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "showItem",
-                    "defaultValue": "undefined",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 944,
-                            "end": 1043,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 945,
-                                "end": 956,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>active item index expanded by default undefined value (starts at 0 to n-items)</p>\n"
-                        },
-                        {
-                            "pos": 1043,
-                            "end": 1069,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1044,
-                                "end": 1051,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>undefined</p>\n"
-                        },
-                        {
-                            "pos": 1069,
-                            "end": 1091,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 1070,
-                                "end": 1074,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 1075,
-                                "end": 1083,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 1076,
-                                    "end": 1082,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 150
-                                }
-                            }
-                        },
-                        {
-                            "pos": 1091,
-                            "end": 1129,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1092,
-                                "end": 1100,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 1129,
-                            "end": 1213,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1130,
-                                "end": 1137,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; [showItem]=&quot;0&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 45,
-                    "type": "number | undefined",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
                     "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 57,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Title from app.component.ts'",
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 }
             ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -615,26 +83,30 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
+                },
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "AccordionComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css'\n})\nexport class AccordionComponent implements OnInit {\n    /**\n   * @description items to display in the accordion\n   * @default []\n   * @type {Item[]}\n   * @memberof RjAccordionComponent\n   * @example\n   * <rjb-accordion [items]=\"items\"></rjb-accordion>\n   */\n    @Input() items: Item[] = [];\n\n    /**\n     * @description id for the accordion\n     * @default rjaccordion\n     * @type {string}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" id=\"rjaccordion\"></rjb-accordion>\n     */\n    @Input() id: string = 'rjaccordion';\n  \n    /**\n     * @description active item index expanded by default undefined value (starts at 0 to n-items)\n     * @default undefined\n     * @type {number}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showItem]=\"0\"></rjb-accordion>\n     */\n    @Input() showItem: number | undefined = undefined;\n  \n    /**\n     * @description show all items expanded by default false value\n     * @default false\n     * @type {boolean}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showAll]=\"true\"></rjb-accordion>\n     */\n    @Input() showAll: boolean = false;\n  \n    ngOnInit(): void {\n      if (this.showAll) {\n        this.showItem = undefined;\n      }\n    }\n}\n",
-            "styleUrl": "./accordion.component.css",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { AccordionComponent, Item } from '../../projects/ngx-rj-ui-kit/src/public-api';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet, AccordionComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.css'\n})\nexport class AppComponent {\n  title = 'Title from app.component.ts';\n\n  items: Item[] = [\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' }\n  ];\n\n}\n",
+            "styleUrl": "./app.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"accordion\" [id]=\"id\">\n    @for (item of items; track $index) {\n    <div class=\"accordion-item\">\n        <h2 class=\"accordion-header\" id=\"item-{{$index}}\">\n            <button class=\"accordion-button\" [ngClass]=\"{'collapsed': !showAll && showItem !== $index }\" type=\"button\"\n                data-bs-toggle=\"collapse\" [attr.data-bs-target]=\"'#collapse-' + $index\" aria-expanded=\"true\"\n                [attr.aria-controls]=\"'collapse-' + $index\">\n                {{item.title}}\n            </button>\n        </h2>\n        <div id=\"collapse-{{$index}}\" class=\"accordion-collapse collapse\"\n            [ngClass]=\"{'show': showAll || showItem === $index}\" aria-labelledby=\"headingOne\"\n            [attr.data-bs-parent]=\"'#item-' + $index\">\n            <div class=\"accordion-body\">\n                {{item.content}}\n            </div>\n        </div>\n    </div>\n    }\n</div>"
+            "templateData": "\n<!-- Accordion -->\n<h3>Accordion</h3>\n<rjb-accordion [items]=\"items\" id=\"acc\" [showItem]=\"0\"></rjb-accordion>\n<!-- end Accordion -->\n\n\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-86e2311c54fbca7431c12e070d0fd5b0ebe343eec0553a392f182ba0e04a8f86613233d26ee47718fd0e7a65078f580c76a1fcc928ce55de81193d6618025bc4",
-            "file": "projects/ngx-rj-ui-kit/src/stories/button.component.ts",
+            "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -767,7 +239,7 @@
         {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-cad94b233ec8e80ceb541e7972c5f9737e08237b4e137112f3987ca48ee0cce5c0d57798d41daa5d4d24d6bdbb2df1606ab68cca2aa0a1785e38f99f3cac0729",
-            "file": "projects/ngx-rj-ui-kit/src/stories/header.component.ts",
+            "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -851,46 +323,9 @@
             "extends": []
         },
         {
-            "name": "NgxRjUiKitComponent",
-            "id": "component-NgxRjUiKitComponent-07030db7218703094abf5b91a11d4bcdd3ff4812690662582dfc7808afeda6c253883c2b694c979213fabe7cf1d56a2956905da30985ba1bc7602635d0743141",
-            "file": "projects/ngx-rj-ui-kit/src/lib/ngx-rj-ui-kit.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "rjb-ngx-rj-ui-kit",
-            "styleUrls": [],
-            "styles": [
-                ""
-            ],
-            "template": "<p>\n  ngx-rj-ui-kit works!\n</p>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'rjb-ngx-rj-ui-kit',\n  standalone: true,\n  imports: [],\n  template: `\n    <p>\n      ngx-rj-ui-kit works!\n    </p>\n  `,\n  styles: ``\n})\nexport class NgxRjUiKitComponent {\n\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n",
-            "extends": []
-        },
-        {
             "name": "PageComponent",
             "id": "component-PageComponent-d32b0f19628254ea3fc5526c4d4564ada1cc83cf936759006d90a46f5874b02a3359e331bddda20b22e74a616a6443c660602ba74dd38ebe1160759e0de6f7ba",
-            "file": "projects/ngx-rj-ui-kit/src/stories/page.component.ts",
+            "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -985,30 +420,40 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Default",
+                "name": "appConfig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "file": "src/app/app.config.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ]\n  },\n}"
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [provideRouter(routes), provideClientHydration()]\n}"
             },
             {
-                "name": "Id",
+                "name": "bootstrap",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "file": "src/main.server.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    id: 'accordion-id'\n  },\n}"
+                "type": "",
+                "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.server.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
             },
             {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1018,7 +463,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1028,7 +473,7 @@
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "file": "src/stories/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1038,7 +483,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1048,7 +493,7 @@
                 "name": "LoggedOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "file": "src/stories/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1058,7 +503,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
@@ -1068,7 +513,7 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HeaderComponent>",
@@ -1078,27 +523,17 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "file": "src/stories/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PageComponent>",
                 "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
             },
             {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  title: 'Example/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  render: (args: AccordionComponent) => ({\n    props: {\n      ...args,\n    },\n  }),\n  argTypes: {\n    items: {\n      control: 'array',\n    },\n  },\n}"
-            },
-            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/.storybook/preview.ts",
+                "file": ".storybook/preview.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
@@ -1108,7 +543,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1118,37 +553,27 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "ShowAll",
+                "name": "serverConfig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "file": "src/app/app.config.server.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    showAll: true\n  },\n}"
-            },
-            {
-                "name": "ShowItem",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    showItem: 1\n  },\n}"
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
             },
             {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1162,7 +587,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "file": "src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1173,7 +598,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "file": "src/stories/header.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1184,18 +609,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<PageComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "file": "src/stories/page.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1204,64 +618,58 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts": [
+            "src/app/app.config.ts": [
                 {
-                    "name": "Default",
+                    "name": "appConfig",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                    "file": "src/app/app.config.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ]\n  },\n}"
-                },
-                {
-                    "name": "Id",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    id: 'accordion-id'\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\n  title: 'Example/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  render: (args: AccordionComponent) => ({\n    props: {\n      ...args,\n    },\n  }),\n  argTypes: {\n    items: {\n      control: 'array',\n    },\n  },\n}"
-                },
-                {
-                    "name": "ShowAll",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    showAll: true\n  },\n}"
-                },
-                {
-                    "name": "ShowItem",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    showItem: 1\n  },\n}"
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideRouter(routes), provideClientHydration()]\n}"
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/stories/button.stories.ts": [
+            "src/main.server.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "() => bootstrapApplication(AppComponent, config)"
+                }
+            ],
+            "src/app/app.config.server.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "mergeApplicationConfig(appConfig, serverConfig)"
+                },
+                {
+                    "name": "serverConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.server.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideServerRendering()\n  ]\n}"
+                }
+            ],
+            "src/stories/button.stories.ts": [
                 {
                     "name": "Large",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1271,7 +679,7 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
@@ -1281,7 +689,7 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1291,7 +699,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1301,19 +709,19 @@
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/stories/header.stories.ts": [
+            "src/stories/header.stories.ts": [
                 {
                     "name": "LoggedIn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1323,7 +731,7 @@
                     "name": "LoggedOut",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1333,19 +741,19 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HeaderComponent>",
                     "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/stories/page.stories.ts": [
+            "src/stories/page.stories.ts": [
                 {
                     "name": "LoggedIn",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                    "file": "src/stories/page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1355,7 +763,7 @@
                     "name": "LoggedOut",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                    "file": "src/stories/page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1365,19 +773,19 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                    "file": "src/stories/page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PageComponent>",
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "projects/ngx-rj-ui-kit/.storybook/preview.ts": [
+            ".storybook/preview.ts": [
                 {
                     "name": "preview",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/.storybook/preview.ts",
+                    "file": ".storybook/preview.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
@@ -1388,52 +796,39 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/ngx-rj-ui-kit/src/stories/button.stories.ts": [
+            "src/stories/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                    "file": "src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 183
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/stories/header.stories.ts": [
+            "src/stories/header.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                    "file": "src/stories/header.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 183
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/stories/page.stories.ts": [
+            "src/stories/page.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<PageComponent>",
-                    "file": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                    "file": "src/stories/page.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1448,7 +843,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "projects/ngx-rj-ui-kit/.storybook/preview.ts",
+                "filePath": ".storybook/preview.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1458,93 +853,56 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
+                "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "AccordionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Item",
+                "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "filePath": "src/app/app.config.server.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Default",
+                "name": "config",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "filePath": "src/app/app.config.server.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Id",
+                "name": "serverConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "filePath": "src/app/app.config.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "filePath": "src/main.server.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ShowAll",
+                "name": "bootstrap",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ShowItem",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/ngx-rj-ui-kit.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NgxRjUiKitComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/ngx-rj-ui-kit.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "NgxRjUiKitService",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.component.ts",
+                "filePath": "src/stories/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
@@ -1553,7 +911,7 @@
                 "status": "very-good"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "filePath": "src/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1563,7 +921,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "filePath": "src/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1573,7 +931,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "filePath": "src/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1583,7 +941,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "filePath": "src/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1593,7 +951,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/button.stories.ts",
+                "filePath": "src/stories/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1603,7 +961,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/header.component.ts",
+                "filePath": "src/stories/header.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderComponent",
@@ -1612,7 +970,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1622,7 +980,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1632,7 +990,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/header.stories.ts",
+                "filePath": "src/stories/header.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1642,7 +1000,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/page.component.ts",
+                "filePath": "src/stories/page.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "PageComponent",
@@ -1651,7 +1009,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "filePath": "src/stories/page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1661,7 +1019,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "filePath": "src/stories/page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1671,7 +1029,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/page.stories.ts",
+                "filePath": "src/stories/page.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1681,7 +1039,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-rj-ui-kit/src/stories/user.ts",
+                "filePath": "src/stories/user.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "User",

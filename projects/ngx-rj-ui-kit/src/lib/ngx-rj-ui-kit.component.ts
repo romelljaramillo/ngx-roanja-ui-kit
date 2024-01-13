@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-ngx-rj-ui-kit',
+  selector: 'rjb-ngx-rj-ui-kit',
   standalone: true,
   imports: [],
   template: `
