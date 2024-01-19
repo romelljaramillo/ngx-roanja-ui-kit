@@ -106,6 +106,7 @@
             "configDir": ".storybook",
             "browserTarget": "roanja-ssr-ui-kit:build",
             "compodoc": true,
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
             "compodocArgs": [
               "-e",
               "json",
@@ -121,6 +122,7 @@
             "configDir": ".storybook",
             "browserTarget": "roanja-ssr-ui-kit:build",
             "compodoc": true,
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
             "compodocArgs": [
               "-e",
               "json",
@@ -161,38 +163,6 @@
               "zone.js",
               "zone.js/testing"
             ]
-          }
-        },
-        "storybook": {
-          "builder": "@storybook/angular:start-storybook",
-          "options": {
-            "configDir": "projects/ngx-rj-ui-kit/.storybook",
-            "browserTarget": "ngx-rj-ui-kit:build",
-            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/ngx-rj-ui-kit"
-            ],
-            "port": 6006
-          }
-        },
-        "build-storybook": {
-          "builder": "@storybook/angular:build-storybook",
-          "options": {
-            "configDir": "projects/ngx-rj-ui-kit/.storybook",
-            "browserTarget": "ngx-rj-ui-kit:build",
-            "styles": ["node_modules/bootstrap/dist/css/bootstrap.css"],
-            "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/ngx-rj-ui-kit"
-            ],
-            "outputDir": "dist/storybook/ngx-rj-ui-kit"
           }
         }
       }

@@ -1,11 +1,12 @@
 {
   "extends": "../tsconfig.app.json",
+  // "extends": "../projects/ngx-rj-ui-kit/tsconfig.lib.json",
   "compilerOptions": {
     "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
   "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
-  "include": ["../src/**/*", "./preview.ts"],
+  "include": ["../src/**/*", "./preview.ts", "../projects/ngx-rj-ui-kit/src/**/*"],
   "files": ["./typings.d.ts"]
 }

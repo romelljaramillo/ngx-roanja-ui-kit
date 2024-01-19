@@ -4,7 +4,7 @@ import { AccordionComponent } from './accordion.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<AccordionComponent> = {
-  title: 'Example/Accordion',
+  title: 'Roanja/Accordion',
   component: AccordionComponent,
   tags: ['autodocs'],
   render: (args: AccordionComponent) => ({
@@ -22,7 +22,6 @@ const meta: Meta<AccordionComponent> = {
 export default meta;
 type Story = StoryObj<AccordionComponent>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
     items: [

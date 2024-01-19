@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "Item",
-            "id": "interface-Item-9f215733f2c13c2b6164c5c52eea2ed883513d2daf911a1396035a4ee22f2755496e4043580ca333a282d66f8a5ea905478e8141b11a4555b1efa23bed3d1d9b",
+            "id": "interface-Item-381d8ebc25278bd76a623efc2d8b71e0b4e3c8c4cea5d6ce57a1a481c14512b277fbc461712ca438162fe9238e8e7f4f48ab5ad762ac75a0b4a8fade125164b4",
             "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css'\n})\nexport class AccordionComponent implements OnInit {\n    /**\n   * @description items to display in the accordion\n   * @default []\n   * @type {Item[]}\n   * @memberof RjAccordionComponent\n   * @example\n   * <rjb-accordion [items]=\"items\"></rjb-accordion>\n   */\n    @Input() items: Item[] = [];\n\n    /**\n     * @description id for the accordion\n     * @default rjaccordion\n     * @type {string}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" id=\"rjaccordion\"></rjb-accordion>\n     */\n    @Input() id: string = 'rjaccordion';\n  \n    /**\n     * @description active item index expanded by default undefined value (starts at 0 to n-items)\n     * @default undefined\n     * @type {number}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showItem]=\"0\"></rjb-accordion>\n     */\n    @Input() showItem: number | undefined = undefined;\n  \n    /**\n     * @description show all items expanded by default false value\n     * @default false\n     * @type {boolean}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showAll]=\"true\"></rjb-accordion>\n     */\n    @Input() showAll: boolean = false;\n  \n    ngOnInit(): void {\n      if (this.showAll) {\n        this.showItem = undefined;\n      }\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css',\n})\nexport class AccordionComponent implements OnInit {\n  \n  /**\n   * items to display in the accordion\n   */\n  @Input() items: Item[] = [];\n\n  /**\n   * @description id for the accordion\n   */\n  @Input() id: string = 'rjaccordion';\n\n  /**\n   * Active item index expanded by default undefined value (starts at 0 to n-items)\n   */\n  @Input() showItem: number | null = null;\n\n  /**\n   * Show all items expanded by default false value\n   */\n  @Input() showAll: boolean = false;\n\n  ngOnInit(): void {\n    if (this.showAll) {\n      this.showItem = null;\n    }\n  }\n}\n",
             "properties": [
                 {
                     "name": "content",
@@ -90,7 +90,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-9f215733f2c13c2b6164c5c52eea2ed883513d2daf911a1396035a4ee22f2755496e4043580ca333a282d66f8a5ea905478e8141b11a4555b1efa23bed3d1d9b",
+            "id": "component-AccordionComponent-381d8ebc25278bd76a623efc2d8b71e0b4e3c8c4cea5d6ce57a1a481c14512b277fbc461712ca438162fe9238e8e7f4f48ab5ad762ac75a0b4a8fade125164b4",
             "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -113,15 +113,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 667,
-                            "end": 708,
+                            "pos": 510,
+                            "end": 547,
                             "flags": 16842752,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 334,
                             "tagName": {
-                                "pos": 668,
-                                "end": 679,
+                                "pos": 511,
+                                "end": 522,
                                 "flags": 16842752,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -129,97 +129,9 @@
                                 "escapedText": "description"
                             },
                             "comment": "<p>id for the accordion</p>\n"
-                        },
-                        {
-                            "pos": 708,
-                            "end": 736,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 709,
-                                "end": 716,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>rjaccordion</p>\n"
-                        },
-                        {
-                            "pos": 736,
-                            "end": 758,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 737,
-                                "end": 741,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 742,
-                                "end": 750,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 743,
-                                    "end": 749,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 154
-                                }
-                            }
-                        },
-                        {
-                            "pos": 758,
-                            "end": 796,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 759,
-                                "end": 767,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 796,
-                            "end": 882,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 797,
-                                "end": 804,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; id=&quot;rjaccordion&quot;&gt;</rjb-accordion></p>\n"
                         }
                     ],
-                    "line": 35,
+                    "line": 26,
                     "type": "string",
                     "decorators": []
                 },
@@ -228,132 +140,9 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 425,
-                            "end": 477,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 426,
-                                "end": 437,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>items to display in the accordion</p>\n"
-                        },
-                        {
-                            "pos": 477,
-                            "end": 494,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 478,
-                                "end": 485,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>[]</p>\n"
-                        },
-                        {
-                            "pos": 494,
-                            "end": 514,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 495,
-                                "end": 499,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 500,
-                                "end": 508,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 501,
-                                    "end": 507,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 188,
-                                    "elementType": {
-                                        "pos": 501,
-                                        "end": 505,
-                                        "flags": 16777216,
-                                        "modifierFlagsCache": 0,
-                                        "transformFlags": 1,
-                                        "kind": 183,
-                                        "typeName": {
-                                            "pos": 501,
-                                            "end": 505,
-                                            "flags": 16777216,
-                                            "modifierFlagsCache": 0,
-                                            "transformFlags": 0,
-                                            "kind": 80,
-                                            "escapedText": "Item"
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "pos": 514,
-                            "end": 550,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 515,
-                                "end": 523,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 550,
-                            "end": 615,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 551,
-                                "end": 558,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 25,
+                    "rawdescription": "\n\nitems to display in the accordion\n",
+                    "description": "<p>items to display in the accordion</p>\n",
+                    "line": 21,
                     "type": "Item[]",
                     "decorators": []
                 },
@@ -362,233 +151,21 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 1289,
-                            "end": 1356,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1290,
-                                "end": 1301,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>show all items expanded by default false value</p>\n"
-                        },
-                        {
-                            "pos": 1356,
-                            "end": 1378,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1357,
-                                "end": 1364,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>false</p>\n"
-                        },
-                        {
-                            "pos": 1378,
-                            "end": 1401,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 1379,
-                                "end": 1383,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 1384,
-                                "end": 1393,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 1385,
-                                    "end": 1392,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 136
-                                }
-                            }
-                        },
-                        {
-                            "pos": 1401,
-                            "end": 1439,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1402,
-                                "end": 1410,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 1439,
-                            "end": 1525,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1440,
-                                "end": 1447,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; [showAll]=&quot;true&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 55,
+                    "rawdescription": "\n\nShow all items expanded by default false value\n",
+                    "description": "<p>Show all items expanded by default false value</p>\n",
+                    "line": 36,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "showItem",
-                    "defaultValue": "undefined",
+                    "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 944,
-                            "end": 1043,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 945,
-                                "end": 956,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "description"
-                            },
-                            "comment": "<p>active item index expanded by default undefined value (starts at 0 to n-items)</p>\n"
-                        },
-                        {
-                            "pos": 1043,
-                            "end": 1069,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1044,
-                                "end": 1051,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "default"
-                            },
-                            "comment": "<p>undefined</p>\n"
-                        },
-                        {
-                            "pos": 1069,
-                            "end": 1091,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 351,
-                            "tagName": {
-                                "pos": 1070,
-                                "end": 1074,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "type"
-                            },
-                            "comment": "",
-                            "typeExpression": {
-                                "pos": 1075,
-                                "end": 1083,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 316,
-                                "type": {
-                                    "pos": 1076,
-                                    "end": 1082,
-                                    "flags": 16777216,
-                                    "modifierFlagsCache": 0,
-                                    "transformFlags": 1,
-                                    "kind": 150
-                                }
-                            }
-                        },
-                        {
-                            "pos": 1091,
-                            "end": 1129,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1092,
-                                "end": 1100,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "memberof"
-                            },
-                            "comment": "<p>RjAccordionComponent</p>\n"
-                        },
-                        {
-                            "pos": 1129,
-                            "end": 1213,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 334,
-                            "tagName": {
-                                "pos": 1130,
-                                "end": 1137,
-                                "flags": 16842752,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 80,
-                                "escapedText": "example"
-                            },
-                            "comment": "<p>&lt;rjb-accordion [items]=&quot;items&quot; [showItem]=&quot;0&quot;&gt;</rjb-accordion></p>\n"
-                        }
-                    ],
-                    "line": 45,
-                    "type": "number | undefined",
+                    "rawdescription": "\n\nActive item index expanded by default undefined value (starts at 0 to n-items)\n",
+                    "description": "<p>Active item index expanded by default undefined value (starts at 0 to n-items)</p>\n",
+                    "line": 31,
+                    "type": "number | null",
                     "decorators": []
                 }
             ],
@@ -601,7 +178,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 57,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -620,7 +197,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css'\n})\nexport class AccordionComponent implements OnInit {\n    /**\n   * @description items to display in the accordion\n   * @default []\n   * @type {Item[]}\n   * @memberof RjAccordionComponent\n   * @example\n   * <rjb-accordion [items]=\"items\"></rjb-accordion>\n   */\n    @Input() items: Item[] = [];\n\n    /**\n     * @description id for the accordion\n     * @default rjaccordion\n     * @type {string}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" id=\"rjaccordion\"></rjb-accordion>\n     */\n    @Input() id: string = 'rjaccordion';\n  \n    /**\n     * @description active item index expanded by default undefined value (starts at 0 to n-items)\n     * @default undefined\n     * @type {number}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showItem]=\"0\"></rjb-accordion>\n     */\n    @Input() showItem: number | undefined = undefined;\n  \n    /**\n     * @description show all items expanded by default false value\n     * @default false\n     * @type {boolean}\n     * @memberof RjAccordionComponent\n     * @example\n     * <rjb-accordion [items]=\"items\" [showAll]=\"true\"></rjb-accordion>\n     */\n    @Input() showAll: boolean = false;\n  \n    ngOnInit(): void {\n      if (this.showAll) {\n        this.showItem = undefined;\n      }\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, OnInit } from '@angular/core';\n\nexport interface Item {\n  title?: string | undefined;\n  content: string;\n}\n\n@Component({\n  selector: 'rjb-accordion',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './accordion.component.html',\n  styleUrl: './accordion.component.css',\n})\nexport class AccordionComponent implements OnInit {\n  \n  /**\n   * items to display in the accordion\n   */\n  @Input() items: Item[] = [];\n\n  /**\n   * @description id for the accordion\n   */\n  @Input() id: string = 'rjaccordion';\n\n  /**\n   * Active item index expanded by default undefined value (starts at 0 to n-items)\n   */\n  @Input() showItem: number | null = null;\n\n  /**\n   * Show all items expanded by default false value\n   */\n  @Input() showAll: boolean = false;\n\n  ngOnInit(): void {\n    if (this.showAll) {\n      this.showItem = null;\n    }\n  }\n}\n",
             "styleUrl": "./accordion.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1444,7 +1021,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 3,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1462,9 +1039,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "AccordionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
+                "coveragePercent": 50,
+                "coverageCount": "3/6",
+                "status": "medium"
             },
             {
                 "filePath": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.component.ts",

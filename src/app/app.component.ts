@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { AccordionComponent, Item } from '../../projects/ngx-rj-ui-kit/src/public-api';
+import { 
+  AccordionComponent, 
+  BtnThemeModeComponent,
+  BtnComponent,
+  Item 
+} from '../../projects/ngx-rj-ui-kit/src/public-api';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, AccordionComponent],
+  imports: [CommonModule, RouterOutlet, AccordionComponent, BtnThemeModeComponent, BtnComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

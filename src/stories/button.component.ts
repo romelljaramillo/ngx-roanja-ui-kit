@@ -16,6 +16,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.css'],
 })
 export class ButtonComponent {
+  
   /**
    * Is this the principal call to action on the page?
    */
