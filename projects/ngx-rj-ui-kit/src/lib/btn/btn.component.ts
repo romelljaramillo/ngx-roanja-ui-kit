@@ -1,30 +1,26 @@
 import { CommonModule } from '@angular/common';
-import { Component,EventEmitter,Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Color } from '../../interfaces/types.interface';
 
 @Component({
   selector: 'rjb-btn',
   standalone: true,
-  imports: [
-    CommonModule,
-  ],
+  imports: [CommonModule],
   template: `
-  <button
-    type="button"
-    (click)="onClick.emit($event)"
-    [ngClass]="classes"
-  >
-  <i [ngClass]="onIcon"></i>
-    {{ label }}
-  </button>
+    <button type="button" (click)="onClick.emit($event)" [ngClass]="classes" [disabled]="disabled">
+      <i [ngClass]="onIcon"></i>
+      {{ label }}
+    </button>
   `,
   styleUrl: './btn.component.css',
 })
-export class BtnComponent { 
-  
+export class BtnComponent {
+
   @Input()
-  type: 'primary' |  'secondary' |  'success' |  'info' |  'warning' |  'danger' |  'light' |  'dark' | 'link' |
-  'outline-primary' |  'outline-secondary' |  'outline-success' |  'outline-info' |  'outline-warning' |  
-  'outline-danger' |  'outline-light' |  'outline-dark' | 'outline-link' = 'light';
+  type: Color = 'primary';
+
+  @Input()
+  outline: boolean = false;
 
   @Input()
   size: 'sm' | 'md' | 'lg' = 'md';
@@ -35,19 +31,30 @@ export class BtnComponent {
   @Input()
   icon = 'coffee';
 
-  @Output() onClick = new EventEmitter<Event>();
+  @Input()
+  disabled = false;
 
+  @Output() onClick = new EventEmitter<Event>();
 
   constructor() {}
 
   public get classes(): string[] {
+    let btnType: string = `btn-${this.type}`;
+    let size = '';
 
-    return ['btn', `btn-${this.type}`, `btn-${this.size}`];
+    if (this.outline) {
+      btnType = `btn-outline-${this.type}`;
+    }
+
+    if (this.size) {
+      size = `btn-${this.size}`;
+    }
+
+    return ['btn', btnType, size];
+
   }
 
   public get onIcon(): string {
     return `fa fa-${this.icon}`;
   }
-
 }
-

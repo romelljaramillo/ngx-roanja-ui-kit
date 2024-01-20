@@ -187,7 +187,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-831eeefa10e7c826cd3128aa1190dfc09e3822889d49c7e9a53015bc010a83906bd38273bc543ea935240c96523f079942ff5c4ee63cedddfd21209add256f48",
+            "id": "component-AppComponent-bd16790ae190860012de53af9cc78a310c64b8dd66b0d53ac2a79fd80ae6554ef8496bc7b943227533c214d1d1b49ce9644531d9e2fbbdcecdef9c91e0f06777",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -206,14 +206,24 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "faCoffee",
+                    "defaultValue": "faCoffee",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
                     "name": "items",
-                    "defaultValue": "[\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' }\n  ]",
+                    "defaultValue": "[\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' },\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Item[]",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 32
                 },
                 {
                     "name": "title",
@@ -223,7 +233,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 19
+                    "line": 29
                 }
             ],
             "methodsClass": [],
@@ -241,6 +251,10 @@
                     "name": "RouterOutlet"
                 },
                 {
+                    "name": "FontAwesomeModule",
+                    "type": "module"
+                },
+                {
                     "name": "AccordionComponent",
                     "type": "component"
                 },
@@ -256,17 +270,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { \n  AccordionComponent, \n  BtnThemeModeComponent,\n  BtnComponent,\n  Item \n} from '../../projects/ngx-rj-ui-kit/src/public-api';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [CommonModule, RouterOutlet, AccordionComponent, BtnThemeModeComponent, BtnComponent],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.css'\n})\nexport class AppComponent {\n  title = 'Title from app.component.ts';\n\n  items: Item[] = [\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' }\n  ];\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterOutlet } from '@angular/router';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { faCoffee } from '@fortawesome/free-solid-svg-icons';\n\nimport {\n  AccordionComponent,\n  BtnThemeModeComponent,\n  BtnComponent,\n  Item,\n} from '../../projects/ngx-rj-ui-kit/src/public-api';\n\n@Component({\n  selector: 'app-root',\n  standalone: true,\n  imports: [\n    CommonModule,\n    RouterOutlet,\n    FontAwesomeModule,\n    AccordionComponent,\n    BtnThemeModeComponent,\n    BtnComponent,\n  ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.css',\n})\nexport class AppComponent {\n  title = 'Title from app.component.ts';\n  faCoffee = faCoffee;\n\n  items: Item[] = [\n    { title: 'Item 1', content: 'Contenido 1' },\n    { title: 'Item 2', content: 'Contenido 2' },\n    { title: 'Item 2', content: 'Contenido 3' },\n  ];\n}\n",
             "styleUrl": "./app.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "\n<!-- Accordion -->\n<h3>Accordion</h3>\n<rjb-accordion [items]=\"items\" id=\"acc\" [showItem]=\"0\"></rjb-accordion>\n<!-- end Accordion -->\n\n<!-- Alert -->\n<h3>Alert</h3>\n<!-- <rjb-alert [type]=\"'success'\" [message]=\"'Success message'\"></rjb-alert> -->\n\n<!-- Button -->\n<h3>Button</h3>\n<rjb-btn [type]=\"'primary'\" [label]=\"'Primary'\"></rjb-btn>\n<rjb-btn [type]=\"'secondary'\" [label]=\"'Secondary'\"></rjb-btn>\n<rjb-btn [type]=\"'success'\" [label]=\"'Success'\"></rjb-btn>\n<rjb-btn [type]=\"'danger'\" [label]=\"'Danger'\"></rjb-btn>\n<rjb-btn [type]=\"'warning'\" [label]=\"'Warning'\"></rjb-btn>\n<rjb-btn [type]=\"'info'\" [label]=\"'Info'\"></rjb-btn>\n<rjb-btn [type]=\"'light'\" [label]=\"'Light'\"></rjb-btn>\n<rjb-btn [type]=\"'dark'\" [label]=\"'Dark'\"></rjb-btn>\n<rjb-btn [type]=\"'link'\" [label]=\"'Link'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-primary'\" [label]=\"'Outline Primary'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-secondary'\" [label]=\"'Outline Secondary'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-success'\" [label]=\"'Outline Success'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-danger'\" [label]=\"'Outline Danger'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-warning'\" [label]=\"'Outline Warning'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-info'\" [label]=\"'Outline Info'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-light'\" [label]=\"'Outline Light'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-dark'\" [label]=\"'Outline Dark'\"></rjb-btn>\n<rjb-btn [type]=\"'outline-link'\" [label]=\"'Outline Link'\"></rjb-btn>\n<rjb-btn [type]=\"'primary'\" [label]=\"'Primary'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'secondary'\" [label]=\"'Secondary'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'success'\" [label]=\"'Success'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'danger'\" [label]=\"'Danger'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'warning'\" [label]=\"'Warning'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'info'\" [label]=\"'Info'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'light'\" [label]=\"'Light'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'dark'\" [label]=\"'Dark'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'link'\" [label]=\"'Link'\" [size]=\"'lg'\"></rjb-btn>\n\n<router-outlet></router-outlet>\n"
+            "templateData": "\n<!-- Accordion -->\n<h3>Accordion</h3>\n<rjb-accordion [items]=\"items\" id=\"acc\" [showItem]=\"0\"></rjb-accordion>\n<!-- end Accordion -->\n\n<!-- Alert -->\n<h3>Alert</h3>\n<!-- <rjb-alert [type]=\"'success'\" [message]=\"'Success message'\"></rjb-alert> -->\n\n\n<fa-icon [icon]=\"faCoffee\"></fa-icon>\n\n\n<!-- Button -->\n<h3>Button</h3>\n<rjb-btn [type]=\"'primary'\" [label]=\"'Primary'\"></rjb-btn>\n<rjb-btn [type]=\"'secondary'\" [label]=\"'Secondary'\"></rjb-btn>\n<rjb-btn [type]=\"'success'\" [label]=\"'Success'\"></rjb-btn>\n<rjb-btn [type]=\"'danger'\" [label]=\"'Danger'\"></rjb-btn>\n<rjb-btn [type]=\"'warning'\" [label]=\"'Warning'\"></rjb-btn>\n<rjb-btn [type]=\"'info'\" [label]=\"'Info'\"></rjb-btn>\n<rjb-btn [type]=\"'light'\" [label]=\"'Light'\"></rjb-btn>\n<rjb-btn [type]=\"'dark'\" [label]=\"'Dark'\"></rjb-btn>\n<rjb-btn [type]=\"'link'\" [label]=\"'Link'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'primary'\" [label]=\"'Outline Primary'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'secondary'\" [label]=\"'Outline Secondary'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'success'\" [label]=\"'Outline Success'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'danger'\" [label]=\"'Outline Danger'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'warning'\" [label]=\"'Outline Warning'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'info'\" [label]=\"'Outline Info'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'light'\" [label]=\"'Outline Light'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'dark'\" [label]=\"'Outline Dark'\"></rjb-btn>\n<rjb-btn [outline]=\"true\" [type]=\"'link'\" [label]=\"'Outline Link'\"></rjb-btn>\n<rjb-btn [type]=\"'primary'\" [label]=\"'Primary'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'secondary'\" [label]=\"'Secondary'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'success'\" [label]=\"'Success'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'danger'\" [label]=\"'Danger'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'warning'\" [label]=\"'Warning'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'info'\" [label]=\"'Info'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'light'\" [label]=\"'Light'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'dark'\" [label]=\"'Dark'\" [size]=\"'lg'\"></rjb-btn>\n<rjb-btn [type]=\"'link'\" [label]=\"'Link'\" [size]=\"'lg'\"></rjb-btn>\n\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "BtnComponent",
-            "id": "component-BtnComponent-69bcd207a98665ba4721adbaddff27ba7d9bd5a8b6a6876c29bc20cbce89caf584e95dec112144f77721b1a22f7f23d6722d55b242ba87832374991eb33c3cf9",
+            "id": "component-BtnComponent-18a056e33b0c60e34080687a4b85b1d24e79b2c0d287d2ac63be2d4537614ba272eff3f6a691e02a80df490149fd0840c43e6c8e20e81a0a507ab778b34ba996",
             "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -276,17 +290,26 @@
             "selector": "rjb-btn",
             "styleUrls": [],
             "styles": [],
-            "template": "<button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n>\n<i [ngClass]=\"onIcon\"></i>\n  {{ label }}\n</button>\n",
+            "template": "<button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [disabled]=\"disabled\">\n  <i [ngClass]=\"onIcon\"></i>\n  {{ label }}\n</button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "icon",
                     "defaultValue": "'coffee'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 32,
                     "type": "string",
                     "decorators": []
                 },
@@ -295,8 +318,17 @@
                     "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 29,
                     "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "outline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "boolean",
                     "decorators": []
                 },
                 {
@@ -304,17 +336,17 @@
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 30,
+                    "line": 26,
                     "type": "\"sm\" | \"md\" | \"lg\"",
                     "decorators": []
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'light'",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 25,
-                    "type": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"danger\" | \"light\" | \"dark\" | \"link\" | \"outline-primary\" | \"outline-secondary\" | \"outline-success\" | \"outline-info\" | \"outline-warning\" | \"outline-danger\" | \"outline-light\" | \"outline-dark\" | \"outline-link\"",
+                    "line": 20,
+                    "type": "Color",
                     "decorators": []
                 }
             ],
@@ -324,7 +356,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 37,
                     "type": "EventEmitter"
                 }
             ],
@@ -344,7 +376,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component,EventEmitter,Input, Output } from '@angular/core';\n\n@Component({\n  selector: 'rjb-btn',\n  standalone: true,\n  imports: [\n    CommonModule,\n  ],\n  template: `\n  <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n  >\n  <i [ngClass]=\"onIcon\"></i>\n    {{ label }}\n  </button>\n  `,\n  styleUrl: './btn.component.css',\n})\nexport class BtnComponent { \n  \n  @Input()\n  type: 'primary' |  'secondary' |  'success' |  'info' |  'warning' |  'danger' |  'light' |  'dark' | 'link' |\n  'outline-primary' |  'outline-secondary' |  'outline-success' |  'outline-info' |  'outline-warning' |  \n  'outline-danger' |  'outline-light' |  'outline-dark' | 'outline-link' = 'light';\n\n  @Input()\n  size: 'sm' | 'md' | 'lg' = 'md';\n\n  @Input()\n  label = 'Button';\n\n  @Input()\n  icon = 'coffee';\n\n  @Output() onClick = new EventEmitter<Event>();\n\n\n  constructor() {}\n\n  public get classes(): string[] {\n\n    return ['btn', `btn-${this.type}`, `btn-${this.size}`];\n  }\n\n  public get onIcon(): string {\n    return `fa fa-${this.icon}`;\n  }\n\n}\n\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { Color } from '../../interfaces/types.interface';\n\n@Component({\n  selector: 'rjb-btn',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n    <button type=\"button\" (click)=\"onClick.emit($event)\" [ngClass]=\"classes\" [disabled]=\"disabled\">\n      <i [ngClass]=\"onIcon\"></i>\n      {{ label }}\n    </button>\n  `,\n  styleUrl: './btn.component.css',\n})\nexport class BtnComponent {\n\n  @Input()\n  type: Color = 'primary';\n\n  @Input()\n  outline: boolean = false;\n\n  @Input()\n  size: 'sm' | 'md' | 'lg' = 'md';\n\n  @Input()\n  label = 'Button';\n\n  @Input()\n  icon = 'coffee';\n\n  @Input()\n  disabled = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  constructor() {}\n\n  public get classes(): string[] {\n    let btnType: string = `btn-${this.type}`;\n    let size = '';\n\n    if (this.outline) {\n      btnType = `btn-outline-${this.type}`;\n    }\n\n    if (this.size) {\n      size = `btn-${this.size}`;\n    }\n\n    return ['btn', btnType, size];\n\n  }\n\n  public get onIcon(): string {\n    return `fa fa-${this.icon}`;\n  }\n}\n",
             "styleUrl": "./btn.component.css",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -355,7 +387,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 38
+                "line": 37
             },
             "extends": [],
             "accessors": {
@@ -365,7 +397,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 43
+                        "line": 41
                     }
                 },
                 "onIcon": {
@@ -374,7 +406,7 @@
                         "name": "onIcon",
                         "type": "string",
                         "returnType": "string",
-                        "line": 48
+                        "line": 57
                     }
                 }
             }
@@ -945,6 +977,16 @@
                 "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ]\n  },\n}"
             },
             {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    disabled: true,\n    label: 'Button',\n  },\n}"
+            },
+            {
                 "name": "Id",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -953,16 +995,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    id: 'accordion-id'\n  },\n}"
-            },
-            {
-                "name": "Info",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'info',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Info",
@@ -983,16 +1015,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'lg',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Large",
@@ -1078,21 +1100,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  title: 'Roanja/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  render: (args: AccordionComponent) => ({\n    props: {\n      ...args,\n    },\n  }),\n  argTypes: {\n    items: {\n      control: 'array',\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BtnComponent>",
                 "defaultValue": "{\n  title: 'Roanja/Btn',\n  component: BtnComponent,\n  tags: ['autodocs'],\n  render: (args: BtnComponent) => ({\n    props: {\n      ...args,\n    },\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  title: 'Roanja/Accordion',\n  component: AccordionComponent,\n  tags: ['autodocs'],\n  render: (args: AccordionComponent) => ({\n    props: {\n      ...args,\n    },\n  }),\n  argTypes: {\n    items: {\n      control: 'array',\n    },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1128,16 +1150,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'primary',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ngx-rj-ui-kit/src/lib/btn-theme-mode/btn-theme-mode.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1153,16 +1165,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'secondary',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Secondary",
@@ -1205,6 +1207,16 @@
                 "defaultValue": "{\n  args: {\n    items: [\n      { title: 'Item 1', content: 'Contenido 1' },\n      { title: 'Item 2', content: 'Contenido 2' },\n      { title: 'Item 3', content: 'Contenido 3' }\n    ],\n    showItem: 1\n  },\n}"
             },
             {
+                "name": "Size",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'lg',\n    label: 'Button',\n  },\n}"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1218,31 +1230,11 @@
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'sm',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/ngx-rj-ui-kit/src/lib/btn-theme-mode/btn-theme-mode.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Success",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'success',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Success",
@@ -1255,14 +1247,14 @@
                 "defaultValue": "{\n  args: {\n    backgroundColor: 'success',\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "Warning",
+                "name": "Type",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    type: 'warning',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    type: 'primary',\n    label: 'Button',\n  },\n}"
             },
             {
                 "name": "Warning",
@@ -1277,6 +1269,17 @@
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "Color",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"danger\" | \"light\" | \"dark\" | \"link\"",
+                "file": "projects/ngx-rj-ui-kit/src/interfaces/types.interface.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -1314,8 +1317,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
+                "rawtype": "StoryObj<BtnComponent>",
+                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1325,8 +1328,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BtnComponent>",
-                "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1404,24 +1407,14 @@
                     "defaultValue": "{\n  args: {\n    type: 'dark',\n    label: 'Button',\n  },\n}"
                 },
                 {
-                    "name": "Info",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'info',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    disabled: true,\n    label: 'Button',\n  },\n}"
                 },
                 {
                     "name": "meta",
@@ -1434,7 +1427,17 @@
                     "defaultValue": "{\n  title: 'Roanja/Btn',\n  component: BtnComponent,\n  tags: ['autodocs'],\n  render: (args: BtnComponent) => ({\n    props: {\n      ...args,\n    },\n  })\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "Size",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    size: 'lg',\n    label: 'Button',\n  },\n}"
+                },
+                {
+                    "name": "Type",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
@@ -1442,46 +1445,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    type: 'primary',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'secondary',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'sm',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Success",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'success',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Warning",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    type: 'warning',\n    label: 'Button',\n  },\n}"
                 }
             ],
             "projects/ngx-rj-ui-kit/src/lib/btn-theme-mode/btn-theme-mode.stories.ts": [
@@ -1760,6 +1723,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/ngx-rj-ui-kit/src/interfaces/types.interface.ts": [
+                {
+                    "name": "Color",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"success\" | \"info\" | \"warning\" | \"danger\" | \"light\" | \"dark\" | \"link\"",
+                    "file": "projects/ngx-rj-ui-kit/src/interfaces/types.interface.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ],
             "src/stories/button.stories.ts": [
                 {
                     "name": "Story",
@@ -1799,19 +1775,6 @@
                     "kind": 183
                 }
             ],
-            "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts": [
                 {
                     "name": "Story",
@@ -1819,6 +1782,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BtnComponent>",
                     "file": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "projects/ngx-rj-ui-kit/src/lib/accordion/accordion.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2028,7 +2004,7 @@
                 "linktype": "component",
                 "name": "BtnComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -2046,17 +2022,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Info",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2076,7 +2042,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Size",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2086,37 +2052,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Success",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-rj-ui-kit/src/lib/btn/btn.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Warning",
+                "name": "Type",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2127,7 +2063,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
